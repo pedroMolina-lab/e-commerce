@@ -1,4 +1,4 @@
-import { getProduct } from "@/lib/hooks";
+import { useGetProduct } from "@/lib/hooks";
 import { product } from "@/types";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
@@ -8,7 +8,7 @@ import { ProductCount } from "./styled";
 import { LoadingText } from "./styled";
 
 export function ProductName({ productName }: any) {
-    const productData = getProduct(productName);
+    const productData = useGetProduct(productName);
     
     const router = useRouter()
 

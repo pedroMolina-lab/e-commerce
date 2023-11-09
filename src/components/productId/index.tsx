@@ -1,4 +1,4 @@
-import { getProductId } from "@/lib/hooks";
+import { useGetProductId } from "@/lib/hooks";
 import { useState, useEffect } from "react";
 import {
   ProductContainer,
@@ -19,7 +19,7 @@ import { useMe } from "@/lib/hooks";
 
 
 export function Product({ productId }: any) {
-  const {data} = getProductId(productId) as any;
+  const {data} = useGetProductId(productId) as any;
   const adress = useMe()
   const adressCheck = adress
   

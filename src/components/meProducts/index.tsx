@@ -1,9 +1,9 @@
-import { getProductsMe } from "@/lib/hooks";
+import { useGetProductsMe } from "@/lib/hooks";
 import { useState, useEffect } from "react";
 import { Container, ProductContainer, ProductImage, NotFoundMessage, NameTitle, Precio } from "./styled";
 
 export function ProductMe() {
-  const productMe = getProductsMe();
+  const productMe = useGetProductsMe();
 console.log(productMe);
 
   const [showResults, setShowResults] = useState(false);

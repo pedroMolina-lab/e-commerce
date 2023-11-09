@@ -9,18 +9,18 @@ export function useMe(){
 
 
 
-export function getProductId(id: string){
+export function useGetProductId(id: string){
     const { data, error,  } = useSWRImmutable(() => (id ? "/searchById"+"?id=" + id : null), fetchApi as any)
     return {data, error} 
 }
 
-export function getProduct(name: string){
+export function useGetProduct(name: string){
     const { data, error } = useSWRImmutable(() => (name ? "/search"+"?q=" + name : null), fetchApi as any)
     
     return data
 }
 
-export function getProductAll() {
+export function useGetProductAll() {
     const { data, error } = useSWR("/searchAll", fetchApi as any);
   
     if (error) {
@@ -36,7 +36,7 @@ export function getProductAll() {
   }
 
 
-  export function getProductsMe() {
+  export function useGetProductsMe() {
     const { data, error } = useSWR("/me/orders", fetchApi as any);
   
     if (error) {

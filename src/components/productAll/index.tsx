@@ -1,8 +1,5 @@
-import { getProduct } from "@/lib/hooks";
-import { product } from "@/types";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { PrimaryButton } from "@/ui/button";
 import {
   Container,
   NotFoundMessage,
@@ -12,10 +9,10 @@ import {
   Button,
   ProductContainer,
 } from "./styled";
-import { getProductAll } from "@/lib/hooks";
+import { useGetProductAll } from "@/lib/hooks";
 
 export function ProductAll() {
-  const productData = getProductAll();
+  const productData = useGetProductAll();
 
   const router = useRouter();
 

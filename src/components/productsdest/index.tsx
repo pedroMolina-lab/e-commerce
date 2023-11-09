@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { PrimaryButton } from "@/ui/button";
 import { useState, useEffect } from "react";
-import { getProductAll } from "@/lib/hooks";
+import { useGetProductAll } from "@/lib/hooks";
 import { Container, ProductContainer, Precio, NameTitle, NotFoundMessage, Button, ProductImage } from "./styled";
 
 function ProductDest() {
-  const productData = getProductAll();
+  const productData = useGetProductAll();
 
   const [product, setProduct] = useState([]) as any;
   const [showResults, setShowResults] = useState(false);
