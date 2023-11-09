@@ -3,14 +3,11 @@ import {
   HeaderContainer,
   Nav,
   BurguerMenuContainer,
-  ButtonHeader,
 } from "./styled";
 import Link from "next/link";
 import BurguerMenu from "@/ui/icons/burguer";
 import { Carrito } from "@/ui/icons/carrito";
-import { getSaveToken } from "@/lib/api";
 import { useRouter } from "next/navigation";
-import { getProductsMe } from "@/lib/hooks";
 
 
 function Header() {

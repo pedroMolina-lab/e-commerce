@@ -12,7 +12,6 @@ import {
   ProductDetailColor,
   Button,
 } from "./styled";
-import Link from "next/link";
 import { OrderProduct, getSaveToken } from "@/lib/api";
 import { useRouter } from "next/router";
 import { useMe } from "@/lib/hooks";

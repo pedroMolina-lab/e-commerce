@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { PrimaryButton } from "@/ui/button";
 import { useState, useEffect } from "react";
 import { useGetProductAll } from "@/lib/hooks";
 import { Container, ProductContainer, Precio, NameTitle, NotFoundMessage, Button, ProductImage } from "./styled";

@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
-import { Form, StyledInput, FormContainer, InputLabel } from "./styled"
+import { Form, StyledInput, InputLabel } from "./styled"
 import { PrimaryButton } from "@/ui/button";
-import { useState, useEffect } from "react";
-import { getProductAll } from "@/lib/hooks";
-import { Container, ProductCard, NotFoundMessage } from "./styled";
+import { useState } from "react";
 
 function ProductSearchForm() {
   const [product, setProduct] = useState([]) as any;
