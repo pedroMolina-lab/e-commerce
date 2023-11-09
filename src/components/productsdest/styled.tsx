@@ -11,10 +11,13 @@ export const Container = styled.div`
   align-items: center;
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 `;
 export const ProductCount = styled.p`
 text-align: left;

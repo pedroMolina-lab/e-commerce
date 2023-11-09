@@ -44,7 +44,7 @@ export function ProductName({ productName }: any) {
                     </ul>
                 </Container>
             ) : (
-                <LoadingText>Cargando...</LoadingText>
+                <LoadingText>No hay productos con ese nombre</LoadingText>
             )}
         </div>
     );

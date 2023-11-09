@@ -8,6 +8,8 @@ import Link from "next/link";
 import BurguerMenu from "@/ui/icons/burguer";
 import { Carrito } from "@/ui/icons/carrito";
 import { useRouter } from "next/navigation";
+import Burguer from "../burguerMenu";
+import BurguerOptions from "../burguerMenu";
 
 
 function Header() {
@@ -38,10 +40,10 @@ function Header() {
 
   return (
     <HeaderContainer>
-      <Link href={"/"}>
-        <Carrito />
+ <Link href={"/"}>
+        {clicked ? null : <Carrito />} {/* Asegúrate de que Carrito se muestre solo cuando clicked sea false */}
       </Link>
-    
+      <BurguerOptions showMenu={clicked} />
       <BurguerMenuContainer>
         <BurguerMenu clicked={clicked} handleClick={handleClick} />
       </BurguerMenuContainer>

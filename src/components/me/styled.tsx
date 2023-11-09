@@ -6,6 +6,8 @@ export const Container = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #c8bcbc;
+  min-width: 280px; 
+  
 `;
 
 export const Title = styled.h2`
