@@ -19,7 +19,7 @@ import { useMe } from "@/lib/hooks";
 
 
 export function Product({ productId }: any) {
-  const productData = getProductId(productId);
+  const {data} = getProductId(productId) as any;
   const adress = useMe()
   const adressCheck = adress
   
@@ -30,14 +30,14 @@ export function Product({ productId }: any) {
   const [selectedColor, setSelectedColor] = useState("");
   
   useEffect(() => {
-    if (productData && productData.product) {
+    if (data && data.product) {
       setShowResults(true);
       
       
     } else {
       setShowResults(false);
     }
-  }, [productData]);
+  }, [data]);
 
   const handleColorSelection = (color) => {
     setSelectedColor(color);
@@ -52,16 +52,16 @@ export function Product({ productId }: any) {
   
   const handleCompraClick = async () => {
       
-    if (productData.product) {
+    if (data.product) {
       if (token) {
         if (adressCheck) {
           const resUrl = await OrderProduct(
-            productData.product.objectID,
+            data.product.objectID,
             selectedColor,
-            productData.product["Unit cost"],
-            productData.product.Images[0].url,
+            data.product["Unit cost"],
+            data.product.Images[0].url,
             formattedDate,
-            productData.product.Name
+            data.product.Name
           );
           if (resUrl) {
             router.push(resUrl.url);
@@ -80,16 +80,16 @@ export function Product({ productId }: any) {
       <ProductContainer>
         {showResults ? (
           <>
-            <ProductTitle>{productData.product.Name}</ProductTitle>
-            <ProductImage src={productData.product.Images[0].url} />
+            <ProductTitle>{data.product.Name}</ProductTitle>
+            <ProductImage src={data.product.Images[0].url} />
             <ProductDescription>
-              {productData.product.Description}
+              {data.product.Description}
             </ProductDescription>
             <ProductDetail>
-              Materials: {productData.product.Materials}
+              Materials: {data.product.Materials}
             </ProductDetail>
             <h3>Elije un color:</h3>
-            {productData.product.Color.map((color, index) => (
+            {data.product.Color.map((color, index) => (
               <ProductDetailColor
                 key={index}
                 onClick={() => handleColorSelection(color)}
@@ -99,7 +99,7 @@ export function Product({ productId }: any) {
               </ProductDetailColor>
             ))}
             <ProductPrice>
-              Precio: ${productData.product["Unit cost"]}
+              Precio: ${data.product["Unit cost"]}
             </ProductPrice>
             <Button onClick={handleCompraClick}>Comprar</Button>
           </>

@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 
 export function ShowData() {
     const data = useMe();
-    console.log(data);
     
 
     const [showResults, setShowResults] = useState(false);

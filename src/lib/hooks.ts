@@ -7,9 +7,11 @@ export function useMe(){
     return data 
 }
 
+
+
 export function getProductId(id: string){
     const { data, error,  } = useSWRImmutable(() => (id ? "/searchById"+"?id=" + id : null), fetchApi as any)
-    return data 
+    return {data, error} 
 }
 
 export function getProduct(name: string){
