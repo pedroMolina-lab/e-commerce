@@ -24,6 +24,8 @@ console.log(productMe);
           <UlConteiner>
             {productMe.map((product, index) => (
                 <ProductContainer key={index}>
+
+                  <h2>pago: {product.status}</h2>
                   <NameTitle>{product.aditionalInfo.fecha}</NameTitle>
                   <NameTitle>{product.aditionalInfo.name}</NameTitle>
                   

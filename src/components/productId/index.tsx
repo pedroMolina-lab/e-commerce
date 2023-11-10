@@ -23,7 +23,7 @@ export function Product({ productId }: any) {
   const adressCheck = adress
   
   const token = getSaveToken();
-  
+  const [paymentUrl, setPaymentUrl] = useState<string | null>(null);
   
   const [showResults, setShowResults] = useState(false);
   const [selectedColor, setSelectedColor] = useState("");

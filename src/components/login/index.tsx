@@ -3,7 +3,7 @@ import { sendCode } from "@/lib/api";
 import { getToken } from "@/lib/api";
 import router from "next/router";
 import { PrimaryButton } from "@/ui/button";
-import { Form, StyledInput, InputLabel } from "./styled";
+import { Form, StyledInput, InputLabel, Title } from "./styled";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -35,6 +35,7 @@ export function Login() {
         <PrimaryButton text="enviar"></PrimaryButton>
       </Form>
       <Form style={{ display: email ? "" : "none" }} onSubmit={handleCodeForm}>
+        <Title>Introduce el codigo que te enviamos a tu email</Title>
         <InputLabel>Ingresa el codigo</InputLabel>
 
         <StyledInput type="text" name="code" placeholder="Code" />

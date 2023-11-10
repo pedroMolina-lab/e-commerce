@@ -25,3 +25,10 @@ export const InputLabel = styled.label`
   color: #604343;
   margin-bottom: 5px;
 `;
+
+
+export const Title = styled.h1`
+  color: #c01f1f; 
+  font-size: 24px;
+  margin-bottom: 60px; 
+`;
