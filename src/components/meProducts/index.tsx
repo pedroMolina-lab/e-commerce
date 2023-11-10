@@ -1,6 +1,6 @@
 import { useGetProductsMe } from "@/lib/hooks";
 import { useState, useEffect } from "react";
-import { Container, ProductContainer, ProductImage, NotFoundMessage, NameTitle, Precio } from "./styled";
+import { Container, ProductContainer, ProductImage, NotFoundMessage, NameTitle, Precio, UlConteiner } from "./styled";
 
 export function ProductMe() {
   const productMe = useGetProductsMe();
@@ -21,7 +21,7 @@ console.log(productMe);
       <h1>Resultados de la búsqueda:</h1>
       {showResults ? (
           <Container>
-          <ul>
+          <UlConteiner>
             {productMe.map((product, index) => (
                 <ProductContainer key={index}>
                   <NameTitle>{product.aditionalInfo.fecha}</NameTitle>
@@ -34,7 +34,7 @@ console.log(productMe);
                 <Precio>Precio: ${product.aditionalInfo.price}</Precio>
               </ProductContainer>
             ))}
-          </ul>
+          </UlConteiner>
         </Container>
       ) : (
         <NotFoundMessage>Cargando...</NotFoundMessage>

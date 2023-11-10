@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const DivContainer = styled.div<{ showMenu: boolean }>`
   display: ${(props) => (props.showMenu ? "flex" : "none")};
   flex-direction: column;
+  margin-top: 20px
 `;
 
 export const StyledLink = styled.li`

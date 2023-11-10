@@ -1,7 +1,7 @@
 import { useGetProduct } from "@/lib/hooks";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Container, ProductContainer, NameTitle, Button, Precio, ProductImage } from "./styled";
+import { Container, ProductContainer, NameTitle, Button, Precio, ProductImage, UlConteiner } from "./styled";
 import { LoadingText } from "./styled";
 
 export function ProductName({ productName }: any) {
@@ -31,7 +31,7 @@ export function ProductName({ productName }: any) {
                 <Container>
 
                     {/* <ProductCount>Se encontraron {productData.searchResult.products.length} productos:</ProductCount> */}
-                    <ul>
+                    <UlConteiner>
                         {productData.searchResult.products.map((product, index) => (
                             <ProductContainer key={index}>
                                 <NameTitle>{product.Name}</NameTitle>
@@ -41,7 +41,7 @@ export function ProductName({ productName }: any) {
                                 <Button onClick={() => goToProductDetail(product.objectID)}>Ver Detalles</Button>
                             </ProductContainer>
                         ))}
-                    </ul>
+                    </UlConteiner>
                 </Container>
             ) : (
                 <LoadingText>No hay productos con ese nombre</LoadingText>

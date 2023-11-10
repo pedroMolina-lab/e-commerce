@@ -77,3 +77,9 @@ export const Button = styled.button`
     background-color: #58687b;
   }
 `;
+export const UlConteiner = styled.ul`
+
+list-style: none;
+    padding: 0;
+    text-align: center; 
+`

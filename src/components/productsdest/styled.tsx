@@ -71,3 +71,9 @@ export const ProductImage = styled.img`
   border-radius: 8px;
   margin-bottom: 20px;
 `;
+export const UlConteiner = styled.ul`
+
+list-style: none;
+    padding: 0;
+    text-align: center; 
+`

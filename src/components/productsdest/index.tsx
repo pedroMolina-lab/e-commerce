@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useGetProductAll } from "@/lib/hooks";
-import { Container, ProductContainer, Precio, NameTitle, NotFoundMessage, Button, ProductImage } from "./styled";
+import { Container, ProductContainer, Precio, NameTitle, NotFoundMessage, Button, ProductImage, UlConteiner } from "./styled";
 
 function ProductDest() {
   const productData = useGetProductAll();
@@ -36,7 +36,7 @@ function ProductDest() {
       <h1>Productos destacados:</h1>
       {showResults ? (
         <Container className="product-container">
-          <ul>
+          <UlConteiner>
             {product.map((product, index) => (
               <ProductContainer key={index}>
                 <NameTitle>{product.Name}</NameTitle>
@@ -45,7 +45,7 @@ function ProductDest() {
                 <Button onClick={() => goToProductDetail(product.objectID)}>Ver Detalles</Button>
               </ProductContainer>
             ))}
-          </ul>
+          </UlConteiner>
         </Container>
       ) : (
         <NotFoundMessage>Cargando...</NotFoundMessage>

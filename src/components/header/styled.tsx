@@ -11,6 +11,12 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+
+  @media (max-width: 580px) {
+    > a {
+      display: none;
+    }
+  }
 `;
 export const Logo = styled.h1`
   font-size: 24px;
@@ -43,9 +49,9 @@ export const Nav = styled.nav`
     align-items: center; 
   }
 
-  @media (max-width: 580px) {
+  /* @media (max-width: 580px) {
     display: none;
-  }
+  } */
 `;
 
 export const BurguerMenuContainer = styled.div`

@@ -49,3 +49,9 @@ export const ProductImage = styled.img`
 `;
 
 
+export const UlConteiner = styled.ul`
+
+list-style: none;
+    padding: 0;
+    text-align: center; 
+`

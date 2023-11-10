@@ -8,6 +8,7 @@ import {
   Precio,
   Button,
   ProductContainer,
+  UlConteiner
 } from "./styled";
 import { useGetProductAll } from "@/lib/hooks";
 
@@ -37,7 +38,7 @@ export function ProductAll() {
       <h1>Resultados de la búsqueda:</h1>
       {showResults ? (
         <Container>
-          <ul>
+          <UlConteiner>
             {productData.product.map((product, index) => (
               <ProductContainer key={index}>
                 <NameTitle>{product.Name}</NameTitle>
@@ -49,7 +50,7 @@ export function ProductAll() {
                 </Button>
               </ProductContainer>
             ))}
-          </ul>
+          </UlConteiner>
         </Container>
       ) : (
         <NotFoundMessage>Cargando...</NotFoundMessage>

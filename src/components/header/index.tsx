@@ -41,12 +41,12 @@ function Header() {
   return (
     <HeaderContainer>
  <Link href={"/"}>
-        {clicked ? null : <Carrito />} {/* Asegúrate de que Carrito se muestre solo cuando clicked sea false */}
+        <Carrito /> 
       </Link>
-      <BurguerOptions showMenu={clicked} />
+      {/* <BurguerOptions showMenu={clicked} />
       <BurguerMenuContainer>
         <BurguerMenu clicked={clicked} handleClick={handleClick} />
-      </BurguerMenuContainer>
+      </BurguerMenuContainer> */}
       <Nav>
         <ul>
           {token ? (
