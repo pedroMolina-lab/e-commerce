@@ -12,8 +12,9 @@ export function ProductName({ productName }: any) {
     const [showResults, setShowResults] = useState(false);
 
     useEffect(() => {
-        if (productData && productData.searchResult && productData.searchResult.products) {
+        if (productData && productData.searchResult && productData.searchResult.products[0]) {
             setShowResults(true);
+            
         } else {
             setShowResults(false);
         }
@@ -44,8 +45,8 @@ export function ProductName({ productName }: any) {
                     </UlConteiner>
                 </Container>
             ) : (
-                <LoadingText>No hay productos con ese nombre</LoadingText>
-            )}
+                <LoadingText>No hay publicaciones que coincidan con tu busqueda</LoadingText>
+)}  
         </div>
-    );
+    )
 }

@@ -35,7 +35,7 @@ export function Login() {
         <PrimaryButton text="enviar"></PrimaryButton>
       </Form>
       <Form style={{ display: email ? "" : "none" }} onSubmit={handleCodeForm}>
-        <Title>Introduce el codigo que te enviamos a tu email</Title>
+        <Title><span style={{ color: 'black' }}>Introduce el código que te enviamos a tu email</span> {email}</Title>
         <InputLabel>Ingresa el codigo</InputLabel>
 
         <StyledInput type="text" name="code" placeholder="Code" />

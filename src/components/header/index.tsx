@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
-import {
-  HeaderContainer,
-  Nav,
-  BurguerMenuContainer,
-} from "./styled";
+import { HeaderContainer, Nav, BurguerMenuContainer } from "./styled";
 import Link from "next/link";
 import BurguerMenu from "@/ui/icons/burguer";
 import { Carrito } from "@/ui/icons/carrito";
 import { useRouter } from "next/navigation";
 import Burguer from "../burguerMenu";
 import BurguerOptions from "../burguerMenu";
-
 
 function Header() {
   const [clicked, setClicked] = useState(false);
@@ -23,13 +18,9 @@ function Header() {
 
   const logout = () => {
     localStorage.removeItem("auth_token");
-    setToken(""); 
+    setToken("");
   };
 
- 
-
- 
-  
   useEffect(() => {
     if (localStorage.getItem("auth_token")) {
       setToken(localStorage.getItem("auth_token") as string);
@@ -40,8 +31,8 @@ function Header() {
 
   return (
     <HeaderContainer>
- <Link href={"/"}>
-        <Carrito /> 
+      <Link href={"/"}>
+        <Carrito />
       </Link>
       {/* <BurguerOptions showMenu={clicked} />
       <BurguerMenuContainer>
@@ -51,18 +42,17 @@ function Header() {
         <ul>
           {token ? (
             <>
-            <Link href="/productMe">
-              <li onClick={handleClick}>Mis Compras</li>
-            </Link>
-            <Link href="/meChange">
-              <li onClick={handleClick}>Mi Perfil</li>
-            </Link>
+              <Link href="/productMe">
+                <li onClick={handleClick}>Mis Compras</li>
+              </Link>
+              <Link href="/meChange">
+                <li onClick={handleClick}>Mi Perfil</li>
+              </Link>
               <Link href="/productAll">
                 <li onClick={handleClick}>Ver todos los productos</li>
               </Link>
               <Link href="/">
-              
-              <li onClick={logout}>Salir</li>
+                <li onClick={logout}>Salir</li>
               </Link>
             </>
           ) : (

@@ -53,9 +53,8 @@ const spin = keyframes`
 `;
 
 export const LoadingText = styled.p`
-  font-size: 18px;
-  color: black;
-  animation: ${spin} 1s linear infinite; 
+   font-size: 18px;
+  color: #ff0000;
 `;
 export const ProductImage = styled.img`
   max-width: 200px;
